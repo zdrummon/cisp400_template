@@ -10,8 +10,8 @@ using namespace std;
 
 //===== prototypes
 void StartProgram();
-void ProgramLoop();
-void EndProgram();
+int ProgramBody();
+int EndProgram(int);
 
 
 
@@ -24,24 +24,36 @@ const int TEN = 10;
 int main() {
     
     StartProgram();
-    ProgramLoop();
-    EndProgram();
 
-    return 0;
+    return EndProgram(ProgramBody());
 }
 //========================================================
 
 
 
-//===== functions
 void StartProgram() {
-    cout << "Welcome to the pig game. Time to pig." << endl;
+//launch program and greet user
+
+    int userChoice;
+    cout << "Welcome to the pig game. Time to pig." << endl
+        << "Do you wanna?" << endl;
+    cin >> userChoice; 
 }
 
-void ProgramLBody() {
-    cout << "The game has begun!" << endl;
+int ProgramBody() {
+//main program loop containing core logic
+
+    int gameState = 1;
+
+    cout << "The game has begun! Oink oink, bro." << endl;
+
+    return gameState;
 }
 
-void EndProgram() {
+int EndProgram(int gameState) {
+//exiting program and returning game values
+
     cout << "Thanks for pigging with me." << endl;
+
+    return gameState;
 }
