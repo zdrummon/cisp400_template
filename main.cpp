@@ -1,6 +1,6 @@
-//main.cpp
-//Zachary Drummond, CISP 400
-//09/01/2021
+// main.cpp
+// Zachary Drummond, CISP 400
+// 00/00/2021
 
 
 
@@ -23,7 +23,7 @@ int EndProgram(int);
 
 
 //===== variables
-enum GameState { GameOver, GameRunning };
+enum ProgramState { ProgramEnd, ProgramRunning };
 
 
 
@@ -42,7 +42,7 @@ int main() {
 void ProgramGreeting() {
 //launch program and explain what's going on
 
-    cout << "Welcome to the  game of pig. It is time to play." << endl;
+    cout << "Welcome to the program." << endl;
 }
 
 
@@ -54,30 +54,30 @@ void UnitTest() {
 int ProgramBody() {
 //main program loop containing core logic
 
-    int gameState = GameState::GameRunning;
+    int programState = ProgramState::ProgramRunning;
     char userInput;
 
-    while(gameState == GameState::GameRunning) {
+    while(programState == ProgramState::ProgramRunning) {
     
-        cout << "The game is running! Oink oink, bro. Press 0 to quit." << endl;
+        cout << "The program is running! Oink oink, bro. Press 0 to quit." << endl;
 
         cin >> userInput;
 
         if (userInput == '0' || userInput == '0') {
-            gameState = GameState::GameOver;
+            programState = ProgramState::ProgramEnd;
         }
     }
     
-    return gameState;
+    return programState;
 }
 
 
-int EndProgram(int gameOutput) {
+int EndProgram(int programOutput) {
 //this function is primarily for testing and logging errors, as well as feedback on exit
 
     cout << "Thanks for pigging with me, goodbye!" << endl;
 
-    return gameOutput;
+    return programOutput;
 }
 
 /*
